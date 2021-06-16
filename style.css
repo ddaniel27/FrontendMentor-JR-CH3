@@ -10,6 +10,16 @@
     --grayish-blue: hsl(210, 4%, 67%);
     --footer-color: rgb(144, 212, 197);
 }
+@keyframes fade-in {
+    from{
+        opacity:0%;
+        transform: translateY(15px);
+    }
+    to{
+        opacity: 100%;
+        transform: translateY(0px);
+    }
+}
 *{
     margin:0;
     padding:0;
@@ -28,6 +38,10 @@ h1,h2,h3{
 p{
     line-height: 1.7;
 }
+.fade-in{
+    animation: fade-in 2s;
+}
+
 
 .hero{
     background-image: url(images/mobile/image-header.jpg);
@@ -337,9 +351,12 @@ footer img{
     }
     .container a::after{
         margin: -7px 0;
+        transform: translateX(0px);
+        transition: transform .2s ease-in-out;
     }
     .container a:hover::after{
         filter:opacity(100%);
+        transform: translateX(10px);
     }
     .egg{
         background-image: url(images/desktop/image-transform.jpg);
